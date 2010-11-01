@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  entry: MyString
+  done: false
+  sticky: false
+
+two:
+  entry: MyString
+  done: false
+  sticky: false
