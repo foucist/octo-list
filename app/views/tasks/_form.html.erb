@@ -1,0 +1,8 @@
+<div id="add_task">
+  <% remote_form_for(task, :update => "tasks", :position => "bottom") do |f| %>
+    <%= f.error_messages %>
+
+    <%= f.text_field :entry %>
+    <%= f.submit submit ||= 'Add a task' %>
+  <% end %>
+</div>

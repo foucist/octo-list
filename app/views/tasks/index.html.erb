@@ -1,0 +1,11 @@
+<h1>All tasks</h1>
+<div id="floatingform">
+  <%= render 'form', :task => Task.new %>
+</div>
+
+<div>
+  <ul id="tasks">
+    <%= render @tasks %>
+  </ul>
+</div>
+
