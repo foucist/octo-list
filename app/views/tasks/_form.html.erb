@@ -3,7 +3,7 @@
     <%= f.error_messages %>
 
     <%= f.text_field :entry, :value => "What do you want to do today?" %>
-    <%= f.submit submit ||= 'Add a task' %>
+    <%= f.submit '', :style => "display:none;" %>
   <% end %>
 </div>
 
