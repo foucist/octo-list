@@ -1,5 +1,5 @@
 <div id="add_task">
-  <% remote_form_for(task, :update => "task-list", :position => "bottom") do |f| %>
+  <% remote_form_for(task, :update => "task-list", :position => "bottom", :complete => "$('new_task').reset(); $('task_entry').blur();") do |f| %>
     <%= f.error_messages %>
 
     <%= f.text_field :entry, :value => "What do you want to do today?" %>
