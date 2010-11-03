@@ -1,7 +1,10 @@
 class Task < ActiveRecord::Base
   acts_as_taggable
 
-  named_scope :by_day, lambda { |d| { :conditions => {:created_at => d.beginning_of_day..d.end_of_day} } }
+  #default_scope :order => 'created_at DESC'
+  #named_scope :active, lambda {{ :conditions => ['done = ? AND expire_at > ?', false, Time.now.utc] }}
+  
+  named_scope :by_day, lambda {|d|{ :conditions => {:created_at => d.to_time.utc..d.end_of_day.utc} }}
   named_scope :sticky, :conditions => {:sticky => true}
   named_scope :done, :conditions => {:done => true}
   named_scope :undone, :conditions => {:done => nil }
@@ -11,5 +14,3 @@ class Task < ActiveRecord::Base
     self.save
   end
 end
-
-

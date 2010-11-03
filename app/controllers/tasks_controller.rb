@@ -5,8 +5,8 @@ class TasksController < ApplicationController
 
   def show
     #will need to check params[:id] and redirect to correct date..  i.e. 1100 should go to 1101 ? 
-    @day = Time.zone.parse(params[:id])
-    @tasks = Task.by_day(@day) + Task.undone.sticky
+    @day = Date.parse(params[:id])
+    @tasks = Task.by_day(@day) | Task.undone.sticky
     @unfinished = Task.by_day(@day.yesterday).undone
 
     respond_to do |format|
