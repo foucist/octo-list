@@ -6,7 +6,8 @@ class TasksController < ApplicationController
   def show
     #will need to check params[:id] and redirect to correct date..  i.e. 1100 should go to 1101 ? 
     @day = Time.zone.parse(params[:id])
-    @tasks = Task.all(:conditions => {:created_at => @day..@day.end_of_day})
+    @tasks = Task.by_day(@day) + Task.undone.sticky
+    @unfinished = Task.by_day(@day.yesterday).undone
 
     respond_to do |format|
       format.html # show.html.erb
