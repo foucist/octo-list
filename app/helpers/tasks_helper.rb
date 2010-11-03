@@ -11,4 +11,8 @@ module TasksHelper
       'id="sticky"'
     end
   end
+
+  def link_to_days(day)
+    link_to("Previous day", task_path(day.yesterday)) +"\n"+ link_to("Next day", task_path(day.tomorrow))
+  end
 end

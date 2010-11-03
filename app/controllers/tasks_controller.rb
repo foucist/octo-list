@@ -4,10 +4,16 @@ class TasksController < ApplicationController
   end
 
   def show
-    #will need to check params[:id] and redirect to correct date..  i.e. 1100 should go to 1101 ? 
-    @day = Date.parse(params[:id])
-    @tasks = Task.by_day(@day) | Task.undone.sticky
-    @unfinished = Task.by_day(@day.yesterday).undone
+    @tasks = Task.find_by_slug(params[:id])
+    @day = Date.parse(params[:id]) rescue Date.today
+    
+    #@day = Date.parse(params[:id]) rescue (tag_based = true; Date.today)
+    #if tag_based 
+    #  @tasks = Task.tagged_with(params[:id])
+    #else
+    #  @tasks = Task.by_day(@day) | Task.undone.sticky
+    #  @unfinished = Task.by_day(@day.yesterday).undone
+    #end
 
     respond_to do |format|
       format.html # show.html.erb

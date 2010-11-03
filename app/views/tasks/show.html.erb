@@ -1,5 +1,4 @@
-<%= link_to "Previous day", task_path(Date.parse(params[:id]).yesterday) %>
-<%= link_to "Next day", task_path(Date.parse(params[:id]).tomorrow) %>
+<%= link_to_days(@day) %>
 
 <!-- input form -->
 <div class="col1 input-form">
