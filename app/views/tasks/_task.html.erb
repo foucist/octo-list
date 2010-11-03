@@ -1,4 +1,4 @@
-<div class="task">
+<div class="task" <%= type_of(task) %>>
   <li class="button">&nbsp;</li>
-  <li class="description"><%= task.entry %></li>
+  <li class="description"><%= auto_link(task.entry) %></li>
 </div>
