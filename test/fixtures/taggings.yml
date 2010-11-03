@@ -1,0 +1,28 @@
+--- 
+taggings_003: 
+  tagger_id: 
+  created_at: 2010-11-03 17:04:06
+  tag_id: 3
+  id: 3
+  taggable_id: 5
+  context: tags
+  tagger_type: 
+  taggable_type: Task
+taggings_001: 
+  tagger_id: 
+  created_at: 2010-11-03 17:03:41
+  tag_id: 1
+  id: 1
+  taggable_id: 1
+  context: tags
+  tagger_type: 
+  taggable_type: Task
+taggings_002: 
+  tagger_id: 
+  created_at: 2010-11-03 17:03:49
+  tag_id: 2
+  id: 2
+  taggable_id: 2
+  context: tags
+  tagger_type: 
+  taggable_type: Task
